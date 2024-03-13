@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="mainDiv"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {% block importmap %}{{ importmap('js') }}{% endblock %}
+{% endblock %}

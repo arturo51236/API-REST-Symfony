@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block body %}
+    <div class="container d-flex" style="height: 900px;">
+        <div class="row w-25 m-auto">
+            <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email, {
+                    label: 'Correo electrónico',
+                    attr: {
+                        class: 'form-control my-2'
+                    }
+                }) }}
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Contraseña',
+                    attr: {
+                        class: 'form-control my-2'
+                    }
+                }) }}
+                {{ form_row(registrationForm.agreeTerms, {
+                    label: 'Aceptar términos y condiciones',
+                    attr: {
+                        class: 'my-2 ms-3'
+                    }
+                }) }}
+
+                <button type="submit" class="btn btn-lg btn-primary">Registrar</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+{% endblock %}

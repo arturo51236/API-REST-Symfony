@@ -3,3 +3,60 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+api_login_check:
+    path: /api/login_check
+
+index:
+    path: /
+    controller: App\Controller\SeguridadController::login
+    methods: GET
+
+registro:
+    path: /registro
+    controller: App\Controller\RegistroController::register
+    methods: GET
+
+logout:
+    path: /logout
+    methods: GET
+
+show_main:
+    path: /api/tarea/show_main/{email}
+    controller: App\Controller\TareaController::show_main
+    methods: GET
+
+tarea_show_all:
+    path: /api/tarea/show_all
+    controller: App\Controller\TareaController::show_all
+    methods: GET
+
+tarea_show_by_usuario:
+    path: /api/tarea/show_by_usuario/{email}
+    controller: App\Controller\TareaController::show_by_usuario
+    methods: GET
+
+tarea_show_by_id:
+    path: /api/tarea/show_by_id/{id}
+    controller: App\Controller\TareaController::show_by_id
+    methods: GET
+
+tarea_add:
+    path: /api/tarea/add
+    controller: App\Controller\TareaController::add
+    methods: PUT|POST
+
+tarea_delete:
+    path: /api/tarea/delete
+    controller: App\Controller\TareaController::delete
+    methods: GET
+
+usuario_show_all:
+    path: /api/usuario/show_all
+    controller: App\Controller\UsuarioController::show_all
+    methods: GET
+
+usuario_delete:
+    path: /api/usuario/delete/{id}
+    controller: App\Controller\UsuarioController::delete
+    methods: GET
